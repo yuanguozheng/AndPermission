@@ -95,7 +95,7 @@ public class Runtime implements RuntimeOption {
         if (sAppPermissions == null) {
             sAppPermissions = new ArrayList<>(getManifestPermissions(mSource.getContext()));
             if (sAppPermissions.contains(ADD_VOICEMAIL_MANIFEST)) {
-                sAppPermissions.add(Permission.ADD_VOICEMAIL);
+//                sAppPermissions.add(Permission.ADD_VOICEMAIL);
             }
         }
 
