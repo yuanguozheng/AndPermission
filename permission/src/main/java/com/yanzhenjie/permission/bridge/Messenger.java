@@ -55,7 +55,10 @@ class Messenger extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        mCallback.onCallback();
+        try {
+            mCallback.onCallback();
+        } catch (Exception ignore) {
+        }
     }
 
     public interface Callback {
