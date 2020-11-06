@@ -15,7 +15,6 @@
  */
 package com.yanzhenjie.permission.task;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -29,32 +28,32 @@ public abstract class TaskExecutor<T> extends AsyncTask<Void, Void, T> {
 
     private static Executor sExecutor = Executors.newSingleThreadExecutor();
 
-    private Dialog mDialog;
+//    private Dialog mDialog;
 
     public TaskExecutor(Context context) {
-        this.mDialog = new WaitDialog(context);
-        this.mDialog.setCancelable(false);
+//        this.mDialog = new WaitDialog(context);
+//        this.mDialog.setCancelable(false);
     }
 
     @Override
     protected final void onPreExecute() {
-        try {
-            if (mDialog != null && !mDialog.isShowing()) {
-                mDialog.show();
-            }
-        } catch (Exception ignore) {
-        }
+//        try {
+//            if (mDialog != null && !mDialog.isShowing()) {
+//                mDialog.show();
+//            }
+//        } catch (Exception ignore) {
+//        }
     }
 
     @Override
     protected final void onPostExecute(T t) {
-        try {
-            if (mDialog != null && mDialog.isShowing()) {
-                mDialog.dismiss();
-            }
+//        try {
+//            if (mDialog != null && mDialog.isShowing()) {
+//                mDialog.dismiss();
+//            }
             onFinish(t);
-        } catch (Exception ignore) {
-        }
+//        } catch (Exception ignore) {
+//        }
     }
 
     protected abstract void onFinish(T t);
